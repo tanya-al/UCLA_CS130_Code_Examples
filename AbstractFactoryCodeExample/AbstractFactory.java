@@ -1,3 +1,4 @@
 public abstract class AbstractFactory {
-	abstract createProduct(String productType);
+	abstract ClothingProduct createAndShipClothes(String clothingType);
+	abstract CookwareProduct createAndShipCookware(String cookwareType);
 }
