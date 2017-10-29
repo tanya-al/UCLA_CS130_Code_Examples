@@ -1,15 +1,22 @@
-public class ConcreteCreator extends Creator {
+public class ConcreteCreator {
 	// ConcreteCreator must implement how to create concrete products. 
 	Product createMethod (String item) {
-		Product product = null; 
+		// Product product = null; 
 		if (item=="a") {
 			System.out.println("creating Product a");
-			product = new ConcreteProduct1(); 
+			return new ConcreteProduct1(); 
 		} 
 		else if (item=="b") {
 			System.out.println("creating Product b");
-			product = new ConcreteProduct2(); 
+			return new ConcreteProduct2(); 
 		}
-		return product;
+		return null;
 	}
+
+	public Product otherMethodsThatUseCreation(String type) { 
+		System.out.println("creating product");
+		Product product = createMethod(type); 
+		product.doCommonOperation();
+		return product;
+	} 
 }
